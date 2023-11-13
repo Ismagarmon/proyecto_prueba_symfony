@@ -1,0 +1,27 @@
+app:
+    resource: "@AppBundle/Controller/"
+    type: annotation
+weather_index:
+    path: /forecast/index
+    defaults: { _controller: AppBundle:Forecast:index}
+weather_param:
+    path: /forecast/{weather}
+    defaults: { _controller: AppBundle:Forecast:indexParam, weather:soleado }
+weather_request:
+    path: /forecast/{weather}/{temperatura}
+    defaults: { _controller: AppBundle:Forecast:index2Param}
+redirect_index:
+    path: /redirect/index
+    defaults: {_controller: AppBundle:Redirect:InternalRedirect}
+redirect_index_permanente:
+    path: /redirect/index/permanente
+    defaults: {_controller: AppBundle:Redirect:ExternalRedirect}
+redirect_index_google:
+    path: /redirect/index/google
+    defaults: {_controller: AppBundle:Redirect:ExternalRedirectGoogle}
+get_temp:
+    path: /errores/{id}
+    defaults: {_controller: AppBundle:Errores:get}
+get_temp_username:
+    path: /errores/usuario/{username}
+    defaults: {_controller: AppBundle:Errores:create}
